@@ -5,10 +5,7 @@ import android.Dependencies.{apklib,aar}
 
 object HelloBuild extends Build {
   lazy val root = Project(id = "root",
-    base = file(".")) aggregate(common, androidProject, pc)
-
-    lazy val androidProject = Project(id = "android-project" ,
-    base = file("android")) dependsOn(common)
+    base = file(".")) aggregate(common, pc)
 
   lazy val pc = Project(id = "pc" ,
     base = file("pc")) dependsOn(common)
